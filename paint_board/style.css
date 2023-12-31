@@ -74,3 +74,19 @@ body {
 .highlighted {
   border: 2px solid black;
 }
+
+.edit-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-button {
+  border: 1px solid;
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: gray;
+  color: white;
+}

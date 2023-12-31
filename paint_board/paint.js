@@ -1,9 +1,10 @@
+import { saveState } from './undo_redo.js';
+
 const canvas = document.querySelector('.paint-box');
 const ctx = canvas.getContext('2d');
 let drawing = false;
 let lastX = 0;
 let lastY = 0;
-
 
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
@@ -25,7 +26,6 @@ document.querySelectorAll('.select-color').forEach(item => {
   });
 });
 
-
 function draw(e) {
   if (!drawing) return;
   ctx.beginPath();
@@ -35,6 +35,8 @@ function draw(e) {
   ctx.stroke();
   lastX = e.offsetX;
   lastY = e.offsetY;
+
+  saveState();
 }
 
 canvas.addEventListener('mousedown', startDrawing);
