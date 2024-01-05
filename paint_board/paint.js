@@ -21,7 +21,7 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  // 캔버스에 임시 내용을 다시 그림
+  // 캔버스에 임시 내용을 다시 그림 
   ctx.drawImage(tempCanvas, 0, 0);
 }
 
@@ -53,7 +53,7 @@ document.querySelectorAll('.select-color').forEach(item => {
   });
 });
 
-// draw 함수 수정
+// draw 함수 수정 (캔버스 좌표 변경)
 function draw(e) {
   if (!drawing) return;
 
