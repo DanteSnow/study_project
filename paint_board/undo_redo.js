@@ -2,6 +2,26 @@ let undoStack = [], redoStack = [];
 const canvas = document.querySelector('.paint-box');
 const ctx = canvas.getContext('2d');
 
+const undoButton = document.getElementById('undo');
+const redoButton = document.getElementById('redo');
+
+undoButton.addEventListener('mousedown', function () {
+  this.classList.add('btn-click');
+});
+
+undoButton.addEventListener('mouseup', function () {
+  this.classList.remove('btn-click');
+});
+
+redoButton.addEventListener('mousedown', function () {
+  this.classList.add('btn-click');
+});
+
+redoButton.addEventListener('mouseup', function () {
+  this.classList.remove('btn-click');
+});
+
+
 export function saveState() {
   undoStack.push(canvas.toDataURL());
   redoStack = [];

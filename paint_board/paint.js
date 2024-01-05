@@ -35,11 +35,19 @@ function draw(e) {
   ctx.stroke();
   lastX = e.offsetX;
   lastY = e.offsetY;
-
-  saveState();
 }
 
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', () => drawing = false);
-canvas.addEventListener('mouseout', () => drawing = false);
+canvas.addEventListener('mouseup', () => {
+  if (drawing) {
+    drawing = false;
+    saveState();
+  }
+});
+canvas.addEventListener('mouseout', () => {
+  if (drawing) {
+    drawing = false;
+    saveState();
+  }
+});
